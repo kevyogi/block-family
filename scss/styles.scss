@@ -9,13 +9,20 @@ $padding: 20px;
 
 
 // Mixins
-@mixin block_font($block_font_size, $block_font_color, $block_bg_color){
+@mixin block_font($block_font_size, $block_font_color, $block_bg_color, $block_display, $block_width){
   font-size: $block_font_size;
   color: $block_font_color;
   .block_family li {
-    background-color: $block_bg_color
+    background-color: $block_bg_color;
+    display: $block_display;
+
+  }
+  .block_family {
+    max-width: $block_width;
   }
 }
+
+
 // Media Query Ranges
 
 body{
@@ -25,17 +32,17 @@ body{
 
   @media screen and (min-width: 400px){
     background-color: $brightColor;
-    @include block_font(20px, $lightColor, $darkColor);
+    @include block_font(20px, $lightColor, $darkColor, block, 350px);
   }
 
   @media screen and (min-width: 600px){
     background-color: $lightColor;
-    @include block_font(30px, $brightColor, $darkColor);
+    @include block_font(50px, $brightColor, $darkColor, inline-block, 350px);
   }
 
   @media screen and (min-width: 900px){
     background-color: $darkColor;
-    @include block_font(40px, $brightColor, $lightColor);
+    @include block_font(70px, $brightColor, $lightColor, inline-block, 800px);
   }
 }
 
