@@ -5,13 +5,16 @@
 $darkColor: maroon;
 $lightColor: white;
 $brightColor: gold;
+$medColor: grey;
 $padding: 20px;
 
 
 // Mixins
-@mixin block_font($block_font_size, $block_font_color, $block_bg_color, $block_display, $block_width){
+@mixin block_font($block_font_size, $block_font_color){
   font-size: $block_font_size;
   color: $block_font_color;
+}
+@mixin block_display($block_bg_color, $block_display, $block_width){
   .block_family li {
     background-color: $block_bg_color;
     display: $block_display;
@@ -32,17 +35,50 @@ body{
 
   @media screen and (min-width: 400px){
     background-color: $brightColor;
-    @include block_font(20px, $lightColor, $darkColor, block, 350px);
+    @include block_font(20px, $lightColor);
+    @include block_display($darkColor, block, 350px);
   }
 
   @media screen and (min-width: 600px){
     background-color: $lightColor;
-    @include block_font(50px, $darkColor, $brightColor, inline-block, 350px);
+    @include block_font(50px, $darkColor);
+    @include block_display($brightColor, inline-block, 350px);
+    li:nth-child(1) {
+      background-color: grey;
+    }
+    li:nth-child(3) {
+      background-color: grey;
+    }
+    li:nth-child(5) {
+      background-color: grey;
+    }
+    li:nth-child(7) {
+      background-color: grey;
+    }
+    li:nth-child(9) {
+      background-color: grey;
+    }
+    li:nth-child(11) {
+      background-color: grey;
+    }
   }
 
   @media screen and (min-width: 900px){
     background-color: $darkColor;
-    @include block_font(70px, $brightColor, $lightColor, inline-block, 800px);
+    @include block_font(70px, $brightColor);
+    @include block_display($lightColor, inline-block, 800px)
+    li:nth-child(2) {
+      background-color: grey;
+    }
+    li:nth-child(5) {
+      background-color: grey;
+    }
+    li:nth-child(8) {
+      background-color: grey;
+    }
+    li:nth-child(11) {
+      background-color: grey;
+    }
   }
 }
 
