@@ -1,17 +1,33 @@
 // Resets, Clearfix, etc
-
+@import "./partials/reset";
+@import "./partials/clearfix";
 // Variables
-
+$darkColor: maroon;
+$lightColor: grey;
+$brightColor: gold;
+$padding: 20px;
 // Media Query Ranges
+body{
+  background-color: $brightColor;
+  text-align: center;
+  color: #EEE;
+
+  @media screen and (min-width: 400px){
+    background-color: $brightColor;
+  }
+
+  @media screen and (min-width: 650px){
+    background-color: $lightColor;
+  }
+
+  @media screen and (min-width: 1200px){
+    background-color: $darkColor;
+  }
+}
 
 // Mixins
 
 // Styles
-body{
-  background-color: orange;
-  text-align: center;
-  color: #EEE;
-}
 
 h1, h2, h3, h4{
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
