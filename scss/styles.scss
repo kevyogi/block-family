@@ -37,7 +37,7 @@ body{
 
   @media screen and (min-width: 600px){
     background-color: $lightColor;
-    @include block_font(50px, $brightColor, $darkColor, inline-block, 350px);
+    @include block_font(50px, $darkColor, $brightColor, inline-block, 350px);
   }
 
   @media screen and (min-width: 900px){
