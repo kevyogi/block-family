@@ -3,10 +3,21 @@
 @import "./partials/clearfix";
 // Variables
 $darkColor: maroon;
-$lightColor: grey;
+$lightColor: white;
 $brightColor: gold;
 $padding: 20px;
+
+
+// Mixins
+@mixin block_font($block_font_size, $block_font_color, $block_bg_color){
+  font-size: $block_font_size;
+  color: $block_font_color;
+  .block_family li {
+    background-color: $block_bg_color
+  }
+}
 // Media Query Ranges
+
 body{
   background-color: $brightColor;
   text-align: center;
@@ -14,18 +25,20 @@ body{
 
   @media screen and (min-width: 400px){
     background-color: $brightColor;
+    @include block_font(20px, $lightColor, $darkColor);
   }
 
-  @media screen and (min-width: 650px){
+  @media screen and (min-width: 600px){
     background-color: $lightColor;
+    @include block_font(30px, $brightColor, $darkColor);
   }
 
-  @media screen and (min-width: 1200px){
+  @media screen and (min-width: 900px){
     background-color: $darkColor;
+    @include block_font(40px, $brightColor, $lightColor);
   }
 }
 
-// Mixins
 
 // Styles
 
